@@ -15,9 +15,3 @@ fn main() {
 
     println!("You guessed: {guess}");
 }
-
-// in Rust, variables are immutable by default
-fn foo() {
-    let apples = 5; // immutable
-    let mut bananas = 5; // mutable
-}
