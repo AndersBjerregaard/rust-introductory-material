@@ -1,17 +1,15 @@
 fn main() {
-    let fib1 = fibonacci(4, &mut []);
-    let fib2 = fibonacci(6, &mut []);
-    let fib3 = fibonacci(10, &mut []);
-    println!("The 4th fibonacci number: {}", fib1);
-    println!("The 6th fibonacci number: {}", fib2);
-    println!("The 10th fibonacci number: {}", fib3);
+    let fib1 = fibonacci(2);
+    let fib2 = fibonacci(4);
+    let fib3 = fibonacci(5);
+    println!("The 2nd fibonacci number: {}", fib1);
+    println!("The 4th fibonacci number: {}", fib2);
+    println!("The 5th fibonacci number: {}", fib3);
 }
 
-fn fibonacci(n: i32, mut memo: &mut [i32]) -> i32 {
-    if memo.len() == 0 {
-        memo = &mut [0, 0, 0, 0];
-    }
-    return 0;
+fn fibonacci(n: i32) -> i32 {
+    if n <= 1 { return 1; }
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 fn array_contains_element(arr: &mut [i32], x: i32) -> bool {
@@ -26,16 +24,3 @@ fn array_contains_element(arr: &mut [i32], x: i32) -> bool {
     }
     return false;
 }
-
-fn resize_array(arr: &mut [i32]) {
-    if arr.len() == 0 {
-
-    }
-}
-
-// const fib = (n, memo = {}) => {
-//     if (n in memo) return memo[n];
-//     if (n <= 2) return 1;
-//     memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
-//     return memo[n];
-// };
